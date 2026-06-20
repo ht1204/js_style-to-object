@@ -6,7 +6,7 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  const parsedStyles = {};
+  const styleDeclarations = {};
 
   sourceString
     .split(';')
@@ -17,10 +17,10 @@ function convertToObject(sourceString) {
       const property = declaration.slice(0, colonIndex).trim();
       const value = declaration.slice(colonIndex + 1).trim();
 
-      parsedStyles[property] = value;
+      styleDeclarations[property] = value;
     });
 
-  return parsedStyles;
+  return styleDeclarations;
 }
 
 module.exports = convertToObject;
